@@ -18,7 +18,6 @@ public class WritingDesk {
     private int currentHeight;
     private final int maxHeight = 150;
 
-    private static WritingDesk instance;
     private static WritingDesk defaultWritingDesk = new WritingDesk();
 
     public static WritingDesk getInstance() {
@@ -38,14 +37,14 @@ public class WritingDesk {
     }
 
     public static void main(String... args) {
-        WritingDesk[] writingdesk = new WritingDesk[4];
-        writingdesk[0] = new WritingDesk();
-        writingdesk[1] = new WritingDesk(5, "yes", 150, 80);
-        writingdesk[2] = WritingDesk.getInstance();
-        writingdesk[3] = WritingDesk.getInstance();
+        WritingDesk[] writingDesks = {new WritingDesk(),
+                new WritingDesk(5, "yes", 150, 80),
+                WritingDesk.getInstance(),
+                WritingDesk.getInstance()
+        };
 
-        for (WritingDesk Writingdesk : writingdesk) {
-            System.out.println(Writingdesk);
+        for (WritingDesk desk : writingDesks) {
+            System.out.println(desk);
         }
     }
 }
