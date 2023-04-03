@@ -13,13 +13,14 @@ public class CoffeeTable extends Desk {
     private int numberOfShelves;
     private int numberOfSeats;
 
-    public CoffeeTable(int height,
-        int width,
-        int length,
-        int numberOfShelves,
-        int numberOfSeats
+    public CoffeeTable(String name,
+                       int height,
+                       int width,
+                       int length,
+                       int numberOfShelves,
+                       int numberOfSeats
     ) {
-        super(height, width, length);
+        super(name, height, width, length);
         this.numberOfShelves = numberOfShelves;
         this.numberOfSeats = numberOfSeats;
     }

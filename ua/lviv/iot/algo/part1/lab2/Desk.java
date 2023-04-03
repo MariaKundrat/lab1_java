@@ -12,9 +12,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public abstract class Desk {
-    protected int height;
-    protected int width;
-    protected int length;
+    private String name = "Unknown";
+    private int height;
+    private int width;
+    private int length;
 
     public abstract void adjustHeight(int centimeters);
 

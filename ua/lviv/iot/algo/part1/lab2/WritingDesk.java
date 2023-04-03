@@ -15,15 +15,16 @@ public class WritingDesk extends Desk {
     private int maxWeightCapacity;
     private int maxHeight = 100;
 
-    public WritingDesk(int height,
-    int width,
-    int length,
-    int numberOfDrawers,
-    String hasKeyboardTray,
-    int maxWeightCapacity,
-    int maxHeight
+    public WritingDesk(String name,
+                       int height,
+                       int width,
+                       int length,
+                       int numberOfDrawers,
+                       String hasKeyboardTray,
+                       int maxWeightCapacity,
+                       int maxHeight
     ) {
-        super(height, width, length);
+        super(name, height, width, length);
         this.numberOfDrawers = numberOfDrawers;
         this.hasKeyboardTray = hasKeyboardTray;
         this.maxWeightCapacity = maxWeightCapacity;
@@ -32,15 +33,15 @@ public class WritingDesk extends Desk {
 
     @Override
     public void adjustHeight(int centimeters) {
-        if (this.height + centimeters <= maxHeight) {
-            this.height += centimeters;
+        if (getHeight() + centimeters <= maxHeight) {
+            setHeight(getHeight() + centimeters);
         }
     }
 
     @Override
     public void moveDown(int centimeters) {
-        if (this.height - centimeters >= 0) {
-            this.height -= centimeters;
+        if (getHeight() - centimeters >= 0) {
+            setHeight(getHeight() - centimeters);
         }
     }
 }

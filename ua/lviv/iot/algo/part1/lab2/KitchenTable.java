@@ -13,28 +13,29 @@ public class KitchenTable extends Desk {
     private String material = "Unknown";
     private int maxHeight = 160;
 
-    public KitchenTable(int height,
-        int width,
-        int length,
-        String material,
-        int maxHeight
+    public KitchenTable(String name,
+                        int height,
+                        int width,
+                        int length,
+                        String material,
+                        int maxHeight
     ) {
-        super(height, width, length);
+        super(name, height, width, length);
         this.material = material;
         this.maxHeight = maxHeight;
     }
 
     @Override
     public void adjustHeight(int centimeters) {
-        if (this.height + centimeters <= maxHeight) {
-            this.height += centimeters;
+        if (getHeight() + centimeters <= maxHeight) {
+            setHeight(getHeight() + centimeters);
         }
     }
 
     @Override
     public void moveDown(int centimeters) {
-        if (this.height - centimeters >= 0) {
-            this.height -= centimeters;
+        if (getHeight() - centimeters >= 0) {
+            setHeight(getHeight() - centimeters);
         }
     }
 }
