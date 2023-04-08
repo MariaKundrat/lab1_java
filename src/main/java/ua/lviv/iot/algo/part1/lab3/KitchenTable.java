@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,22 +9,19 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class ComputerDesk extends Desk {
-    private int numberOfDrawers;
-    private String hasKeyboardTray = "Unknown";
-    private int maxHeight = 130;
+public class KitchenTable extends Desk {
+    private String material = "Unknown";
+    private int maxHeight = 160;
 
-    public ComputerDesk(String name,
+    public KitchenTable(String name,
                         int height,
                         int width,
                         int length,
-                        int numberOfDrawers,
-                        String hasKeyboardTray,
+                        String material,
                         int maxHeight
     ) {
         super(name, height, width, length);
-        this.numberOfDrawers = numberOfDrawers;
-        this.hasKeyboardTray = hasKeyboardTray;
+        this.material = material;
         this.maxHeight = maxHeight;
     }
 
@@ -33,12 +30,18 @@ public class ComputerDesk extends Desk {
         if (getHeight() + centimeters <= maxHeight) {
             setHeight(getHeight() + centimeters);
         }
+        else {
+            setHeight(maxHeight);
+        }
     }
 
     @Override
     public void moveDown(int centimeters) {
         if (getHeight() - centimeters >= 0) {
             setHeight(getHeight() - centimeters);
+        }
+        else {
+            setHeight(0);
         }
     }
 }

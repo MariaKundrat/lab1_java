@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,12 +36,18 @@ public class WritingDesk extends Desk {
         if (getHeight() + centimeters <= maxHeight) {
             setHeight(getHeight() + centimeters);
         }
+        else {
+            setHeight(maxHeight);
+        }
     }
 
     @Override
     public void moveDown(int centimeters) {
         if (getHeight() - centimeters >= 0) {
             setHeight(getHeight() - centimeters);
+        }
+        else {
+            setHeight(0);
         }
     }
 }
