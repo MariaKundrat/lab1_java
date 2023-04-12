@@ -18,11 +18,11 @@ public class DeskManagerTest {
         deskManager = new DeskManager();
         deskManager.addDesk(new CoffeeTable("CoffeeTable small №1", 80, 100, 125, 2, 4));
         deskManager.addDesk(new CoffeeTable());
-        deskManager.addDesk(new WritingDesk("WritingDesk small №1", 70, 105, 145, 4, "Yes", 200, 100));
+        deskManager.addDesk(new WritingDesk("WritingDesk small №1", 70, 105, 145, 4, "Yes", 200));
         deskManager.addDesk(new WritingDesk());
-        deskManager.addDesk(new ComputerDesk("ComputerDesk small №1", 85, 100, 155, 6, "Yes", 110));
+        deskManager.addDesk(new ComputerDesk("ComputerDesk small №1", 85, 100, 155, 6, "Yes"));
         deskManager.addDesk(new ComputerDesk());
-        deskManager.addDesk(new KitchenTable("KitchenTable small №1", 105, 85, 265, "Iron", 150));
+        deskManager.addDesk(new KitchenTable("KitchenTable small №1", 105, 85, 265, "Iron"));
         deskManager.addDesk(new KitchenTable());
     }
 
@@ -30,14 +30,18 @@ public class DeskManagerTest {
     public void testFindAllTablesHigherThan() {
         List<Desk> desks = deskManager.findAllTablesHigherThan(80);
         assertEquals(2, desks.size());
-        Assertions.assertTrue(desks.get(0).getHeight() > 80);
+        for (var desk : desks) {
+            Assertions.assertTrue(desk.getHeight() > 80);
+        }
     }
 
     @Test
     public void testFindAllWithLengthGreaterThan() {
         List<Desk> desks = deskManager.findAllWithLengthGreaterThan(150);
         assertEquals(2, desks.size());
-        Assertions.assertTrue(desks.get(0).getLength() > 150);
+        for (var desk : desks) {
+            Assertions.assertTrue(desk.getLength() > 150);
+        }
     }
 
     @Test

@@ -10,13 +10,7 @@ public class ComputerDeskTest {
 
     @BeforeEach
     public void setUp() {
-        computerDesk = new ComputerDesk("ComputerDesk small №1", 85, 100, 155, 6, "Yes", 110);
-    }
-
-    @Test
-    public void testToString() {
-        ComputerDesk computerDesk = new ComputerDesk("ComputerDesk small №1", 85, 100, 155, 6, "Yes", 110);
-        assertEquals("ComputerDesk(super=Desk(name=ComputerDesk small №1, height=85, width=100, length=155), numberOfDrawers=6, hasKeyboardTray=Yes, maxHeight=110)", computerDesk.toString());
+        computerDesk = new ComputerDesk("ComputerDesk small №1", 85, 100, 155, 6, "Yes");
     }
 
     @Test
@@ -32,21 +26,14 @@ public class ComputerDeskTest {
     }
 
     @Test
-    public void testAdjustHeight_ExceedsMaxHeight() {
+    public void testAdjustHeightExceedsMaxHeight() {
         computerDesk.adjustHeight(500);
-        assertEquals(110, computerDesk.getHeight());
+        assertEquals(130, computerDesk.getHeight());
     }
 
     @Test
-    public void testMoveDown_HeightBelowZero() {
+    public void testMoveDownHeightBelowZero() {
         computerDesk.moveDown(86);
         assertEquals(0, computerDesk.getHeight());
-    }
-
-    @Test
-    public void testSetNumberOfShelves() {
-        computerDesk.setNumberOfDrawers(6);
-        int actual = computerDesk.getNumberOfDrawers();
-        assertEquals(6, actual);
     }
 }

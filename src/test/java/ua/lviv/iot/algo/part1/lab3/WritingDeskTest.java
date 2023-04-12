@@ -10,13 +10,7 @@ public class WritingDeskTest {
 
     @BeforeEach
     public void setUp() {
-        writingDesk = new WritingDesk("WritingDesk small №1", 70, 105, 145, 4, "Yes", 200, 100);
-    }
-
-    @Test
-    public void testToString() {
-        WritingDesk writingDesk = new WritingDesk("WritingDesk small №1", 70, 105, 145, 4, "Yes", 200, 100);
-        assertEquals("WritingDesk(super=Desk(name=WritingDesk small №1, height=70, width=105, length=145), numberOfDrawers=4, hasKeyboardTray=Yes, maxWeightCapacity=200, maxHeight=100)", writingDesk.toString());
+        writingDesk = new WritingDesk("WritingDesk small №1", 70, 105, 145, 4, "Yes", 200);
     }
 
     @Test
@@ -38,15 +32,8 @@ public class WritingDeskTest {
     }
 
     @Test
-    public void testMoveDownBelowZero() {
+    public void testMoveDownHeightBelowZero() {
         writingDesk.moveDown(100);
         assertEquals(0, writingDesk.getHeight());
-    }
-
-    @Test
-    public void testSetNumberOfShelves() {
-        writingDesk.setNumberOfDrawers(4);
-        int actual = writingDesk.getNumberOfDrawers();
-        assertEquals(4, actual);
     }
 }

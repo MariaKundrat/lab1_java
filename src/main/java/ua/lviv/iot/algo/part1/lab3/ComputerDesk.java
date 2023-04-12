@@ -12,33 +12,31 @@ import lombok.ToString;
 public class ComputerDesk extends Desk {
     private int numberOfDrawers;
     private String hasKeyboardTray = "Unknown";
-    private int maxHeight = 130;
+    private static final int MAX_HEIGHT = 130;
 
-    public ComputerDesk(String name,
-                        int height,
-                        int width,
-                        int length,
-                        int numberOfDrawers,
-                        String hasKeyboardTray,
-                        int maxHeight
+    public ComputerDesk(final String name,
+                        final int height,
+                        final int width,
+                        final int length,
+                        final int numberOfDrawers,
+                        final String hasKeyboardTray
     ) {
         super(name, height, width, length);
         this.numberOfDrawers = numberOfDrawers;
         this.hasKeyboardTray = hasKeyboardTray;
-        this.maxHeight = maxHeight;
     }
 
     @Override
-    public void adjustHeight(int centimeters) {
-        if (getHeight() + centimeters <= maxHeight) {
+    public final void adjustHeight(final int centimeters) {
+        if (getHeight() + centimeters <= MAX_HEIGHT) {
             setHeight(getHeight() + centimeters);
         } else {
-            setHeight(maxHeight);
+            setHeight(MAX_HEIGHT);
         }
     }
 
     @Override
-    public void moveDown(int centimeters) {
+    public final void moveDown(final int centimeters) {
         if (getHeight() - centimeters >= 0) {
             setHeight(getHeight() - centimeters);
         } else {

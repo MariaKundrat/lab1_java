@@ -11,36 +11,32 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public class KitchenTable extends Desk {
     private String material = "Unknown";
-    private int maxHeight = 160;
+    private static final int MAX_HEIGHT = 160;
 
-    public KitchenTable(String name,
-                        int height,
-                        int width,
-                        int length,
-                        String material,
-                        int maxHeight
+    public KitchenTable(final String name,
+                        final int height,
+                        final int width,
+                        final int length,
+                        final String material
     ) {
         super(name, height, width, length);
         this.material = material;
-        this.maxHeight = maxHeight;
     }
 
     @Override
-    public void adjustHeight(int centimeters) {
-        if (getHeight() + centimeters <= maxHeight) {
+    public final void adjustHeight(final int centimeters) {
+        if (getHeight() + centimeters <= MAX_HEIGHT) {
             setHeight(getHeight() + centimeters);
-        }
-        else {
-            setHeight(maxHeight);
+        } else {
+            setHeight(MAX_HEIGHT);
         }
     }
 
     @Override
-    public void moveDown(int centimeters) {
+    public final void moveDown(final int centimeters) {
         if (getHeight() - centimeters >= 0) {
             setHeight(getHeight() - centimeters);
-        }
-        else {
+        } else {
             setHeight(0);
         }
     }

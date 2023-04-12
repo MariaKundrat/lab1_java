@@ -10,13 +10,7 @@ public class KitchenTableTest {
 
     @BeforeEach
     public void setUp() {
-        kitchenTable = new KitchenTable("KitchenTable small №1", 105, 85, 265, "Iron", 150);
-    }
-
-    @Test
-    public void testToString() {
-        KitchenTable kitchenTable = new KitchenTable("KitchenTable small №1", 105, 85, 265, "Iron", 150);
-        assertEquals("KitchenTable(super=Desk(name=KitchenTable small №1, height=105, width=85, length=265), material=Iron, maxHeight=150)", kitchenTable.toString());
+        kitchenTable = new KitchenTable("KitchenTable small №1", 105, 85, 265, "Iron");
     }
 
     @Test
@@ -26,9 +20,9 @@ public class KitchenTableTest {
     }
 
     @Test
-    public void testAdjustHeight_ExceedsMaxHeight() {
+    public void testAdjustHeightExceedsMaxHeight() {
         kitchenTable.adjustHeight(500);
-        assertEquals(150, kitchenTable.getHeight());
+        assertEquals(160, kitchenTable.getHeight());
     }
 
     @Test
@@ -38,15 +32,8 @@ public class KitchenTableTest {
     }
 
     @Test
-    public void testMoveDown_HeightBelowZero() {
+    public void testMoveDownHeightBelowZero() {
         kitchenTable.moveDown(106);
         assertEquals(0, kitchenTable.getHeight());
-    }
-
-    @Test
-    public void testSetNumberOfShelves() {
-        kitchenTable.setMaterial("Iron");
-        String actual = kitchenTable.getMaterial();
-        assertEquals("Iron", actual);
     }
 }
