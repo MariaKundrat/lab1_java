@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,12 +13,12 @@ public class CoffeeTable extends Desk {
     private int numberOfShelves;
     private int numberOfSeats;
 
-    public CoffeeTable(String name,
-                       int height,
-                       int width,
-                       int length,
-                       int numberOfShelves,
-                       int numberOfSeats
+    public CoffeeTable(final String name,
+                       final int height,
+                       final int width,
+                       final int length,
+                       final int numberOfShelves,
+                       final int numberOfSeats
     ) {
         super(name, height, width, length);
         this.numberOfShelves = numberOfShelves;
@@ -26,12 +26,12 @@ public class CoffeeTable extends Desk {
     }
 
     @Override
-    public void adjustHeight(int centimeters) {
+    public final void adjustHeight(final int centimeters) {
         System.out.println("You cannot increase the height of CoffeeTable");
     }
 
     @Override
-    public void moveDown(int centimeters) {
+    public final void moveDown(final int centimeters) {
         System.out.println("You cannot increase the height of CoffeeTable");
     }
 }
