@@ -1,4 +1,6 @@
-package ua.lviv.iot.algo.part1.lab4;
+package ua.lviv.iot.algo.part1.lab4.manager;
+
+import ua.lviv.iot.algo.part1.lab4.models.Desk;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -11,7 +13,7 @@ public class DeskManager {
         this.deskList.add(desks);
     }
 
-    public List<Desk> getDesks() {
+    public final List<Desk> getDesks() {
         return new LinkedList<>(this.deskList);
     }
 

@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab4;
+package ua.lviv.iot.algo.part1.lab4.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,12 +13,14 @@ public class CoffeeTable extends Desk {
     private int numberOfShelves;
     private int numberOfSeats;
 
-    public String getHeaders() {
+    @Override
+    public final String getHeaders() {
         return super.getHeaders() + "numberOfShelves" + ", " + "numberOfSeats" + "\n";
     }
 
-    public String toCSV() {
-        return super.toCSV() + numberOfShelves + ", " + numberOfSeats;
+    @Override
+    public final String toCSV() {
+        return super.toCSV() + numberOfShelves + ", " + numberOfSeats + "\n";
     }
 
     public CoffeeTable(final String name,

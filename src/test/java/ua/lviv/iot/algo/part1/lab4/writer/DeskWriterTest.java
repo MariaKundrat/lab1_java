@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab4;
+package ua.lviv.iot.algo.part1.lab4.writer;
 
 import org.junit.jupiter.api.*;
 
@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab4.models.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +28,7 @@ public class DeskWriterTest {
     }
 
     @Test
-    public void testEmptyWrite() throws IOException {
+    public void testEmptyWrite() {
         writer.writeToFile(deskList);
         File file = new File(RESULT_FILENAME);
         assertFalse(file.exists());
