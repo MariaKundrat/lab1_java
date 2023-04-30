@@ -1,0 +1,12 @@
+name, height, width, length, numberOfShelves, numberOfSeats
+CoffeeTable small 1, 80, 100, 125, 2, 4
+Unknown, 0, 0, 0, 0, 0
+name, height, width, length, numberOfDrawers, hasKeyboardTray
+ComputerDesk small 1, 85, 100, 155, 6, Yes
+Unknown, 0, 0, 0, 0, Unknown
+name, height, width, length, material
+KitchenTable small 1, 105, 85, 265, Iron
+Unknown, 0, 0, 0, Unknown
+name, height, width, length, numberOfDrawers, hasKeyboardTray, maxWeightCapacity
+WritingDesk small 1, 70, 105, 145, 4, Yes, 200
+Unknown, 0, 0, 0, 0, Unknown, 0

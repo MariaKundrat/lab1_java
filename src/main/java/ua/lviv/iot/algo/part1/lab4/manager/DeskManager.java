@@ -1,4 +1,6 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab4.manager;
+
+import ua.lviv.iot.algo.part1.lab4.models.Desk;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +11,10 @@ public class DeskManager {
 
     public final void addDesk(final Desk desks) {
         this.deskList.add(desks);
+    }
+
+    public final List<Desk> getDesks() {
+        return new LinkedList<>(this.deskList);
     }
 
     public final List<Desk> findAllTablesHigherThan(final int value) {

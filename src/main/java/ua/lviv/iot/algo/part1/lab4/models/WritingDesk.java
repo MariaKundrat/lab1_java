@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab4.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +14,16 @@ public class WritingDesk extends Desk {
     private String hasKeyboardTray = "Unknown";
     private int maxWeightCapacity;
     private static final int MAX_HEIGHT = 100;
+
+    @Override
+    public final String getHeaders() {
+        return super.getHeaders() + "numberOfDrawers" + ", " + "hasKeyboardTray" + ", " + "maxWeightCapacity" + "\n";
+    }
+
+    @Override
+    public final String toCSV() {
+        return super.toCSV() + numberOfDrawers + ", " + hasKeyboardTray + ", " + maxWeightCapacity + "\n";
+    }
 
     public WritingDesk(final String name,
                        final int height,

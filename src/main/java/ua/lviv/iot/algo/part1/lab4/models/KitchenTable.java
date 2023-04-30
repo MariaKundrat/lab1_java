@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab4.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +12,16 @@ import lombok.ToString;
 public class KitchenTable extends Desk {
     private String material = "Unknown";
     private static final int MAX_HEIGHT = 160;
+
+    @Override
+    public final String getHeaders() {
+        return super.getHeaders() + "material" + "\n";
+    }
+
+    @Override
+    public final String toCSV() {
+        return super.toCSV() + material + "\n";
+    }
 
     public KitchenTable(final String name,
                         final int height,
