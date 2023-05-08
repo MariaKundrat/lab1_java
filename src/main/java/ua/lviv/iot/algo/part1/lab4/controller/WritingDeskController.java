@@ -22,14 +22,13 @@ public class WritingDeskController {
     @Autowired
     private WritingDeskService writingDeskService;
 
-    @GetMapping("/get-all")
+    @GetMapping
     public final List<WritingDesk> getAllWritingDesks() {
         return writingDeskService.getAllWritingDesks();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping(path = "/{id}")
     public final ResponseEntity<WritingDesk> getWritingDeskById(@PathVariable("id") final Integer id) {
-        System.out.println(id);
         WritingDesk writingDesk = writingDeskService.getWritingDeskById(id);
         if (writingDesk == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -37,26 +36,24 @@ public class WritingDeskController {
         return new ResponseEntity<>(writingDesk, HttpStatus.OK);
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public final WritingDesk createWritingDesk(@RequestBody final WritingDesk writingDesk) {
         WritingDesk result = writingDeskService.createWritingDesk(writingDesk);
-        System.out.println(result);
         return result;
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping(path = "/{id}")
     public final ResponseEntity<WritingDesk> updateWritingDeskById(@PathVariable("id") final Integer id, @RequestBody final WritingDesk writingDesk) {
         WritingDesk existingWritingDesk = writingDeskService.getWritingDeskById(id);
         if (existingWritingDesk == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        System.out.println(id);
         WritingDesk result = writingDeskService.updateWritingDeskById(id, writingDesk);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public final ResponseEntity<String> deleteWritingDesk(@PathVariable final Integer id) {
+    @DeleteMapping(path = "/{id}")
+    public final ResponseEntity<String> deleteWritingDesk(@PathVariable("id") final Integer id) {
         WritingDesk existingWritingDesk = writingDeskService.getWritingDeskById(id);
         if (existingWritingDesk == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

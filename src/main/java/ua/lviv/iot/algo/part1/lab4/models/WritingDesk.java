@@ -21,7 +21,7 @@ public class WritingDesk extends Desk {
     @JsonIgnore
     @Override
     public final String getHeaders() {
-        return super.getHeaders() + "numberOfDrawers" + ", " + "hasKeyboardTray" + ", " + "maxWeightCapacity" + "\n";
+        return super.getHeaders() + "numberOfDrawers" + ", " + "hasKeyboardTray" + ", " + "maxWeightCapacity" + ", " + "id" + "\n";
     }
 
     @Override
