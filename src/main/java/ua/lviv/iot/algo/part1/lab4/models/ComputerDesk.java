@@ -5,42 +5,35 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 @ToString(callSuper = true)
-public class WritingDesk extends Desk {
+public class ComputerDesk extends Desk {
     private int numberOfDrawers;
     private String hasKeyboardTray = "Unknown";
-    private int maxWeightCapacity;
-    private static final int MAX_HEIGHT = 100;
-    private Integer id;
+    private static final int MAX_HEIGHT = 130;
 
-    @JsonIgnore
     @Override
     public final String getHeaders() {
-        return super.getHeaders() + "numberOfDrawers" + ", " + "hasKeyboardTray" + ", " + "maxWeightCapacity" + "\n";
+        return super.getHeaders() + "numberOfDrawers" + ", " + "hasKeyboardTray" + "\n";
     }
 
     @Override
     public final String toCSV() {
-        return super.toCSV() + numberOfDrawers + ", " + hasKeyboardTray + ", " + maxWeightCapacity + "\n";
+        return super.toCSV() + numberOfDrawers + ", " + hasKeyboardTray + "\n";
     }
 
-    public WritingDesk(final String name,
-                       final int height,
-                       final int width,
-                       final int length,
-                       final int numberOfDrawers,
-                       final String hasKeyboardTray,
-                       final int maxWeightCapacity
+    public ComputerDesk(final String name,
+                        final int height,
+                        final int width,
+                        final int length,
+                        final int numberOfDrawers,
+                        final String hasKeyboardTray
     ) {
         super(name, height, width, length);
         this.numberOfDrawers = numberOfDrawers;
         this.hasKeyboardTray = hasKeyboardTray;
-        this.maxWeightCapacity = maxWeightCapacity;
     }
 
     @Override

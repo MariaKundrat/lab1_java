@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab4.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +16,14 @@ public abstract class Desk {
     private int height;
     private int width;
     private int length;
+
+    public String getHeaders() {
+        return "name" + ", " + "height" + ", " + "width" + ", " + "length" + ", ";
+    }
+
+    public String toCSV() {
+        return name + ", " + height + ", " + width + ", " + length + ", ";
+    }
 
     public abstract void adjustHeight(int centimeters);
 
