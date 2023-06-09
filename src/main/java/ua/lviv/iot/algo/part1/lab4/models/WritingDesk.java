@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -14,10 +16,12 @@ public class WritingDesk extends Desk {
     private String hasKeyboardTray = "Unknown";
     private int maxWeightCapacity;
     private static final int MAX_HEIGHT = 100;
+    private Integer id;
 
+    @JsonIgnore
     @Override
     public final String getHeaders() {
-        return super.getHeaders() + "numberOfDrawers" + ", " + "hasKeyboardTray" + ", " + "maxWeightCapacity" + "\n";
+        return super.getHeaders() + "numberOfDrawers" + ", " + "hasKeyboardTray" + ", " + "maxWeightCapacity" + ", " + "id" + "\n";
     }
 
     @Override
